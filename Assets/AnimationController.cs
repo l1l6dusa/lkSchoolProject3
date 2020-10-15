@@ -18,18 +18,20 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_playerController.IsGrounded)
         {
-            _animator.SetBool("run",false);
+            _animator.SetBool("run",Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)); 
+        }
+        else
+        {
+            _animator.SetBool("run", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && _playerController.IsGrounded)
+        {
             _animator.SetTrigger("jump");
         }
+        _animator.SetBool("fallingDown", _playerController.VelocityY<0);
         
-    }
-
-    private void LateUpdate()
-    {
-        if(_playerController.IsGrounded)
-            _animator.SetBool("run",Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
+        
     }
 }
