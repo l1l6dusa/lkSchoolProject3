@@ -31,7 +31,7 @@ public class AnimationController : MonoBehaviour
             _animator.SetTrigger("jump");
         }
         _animator.SetBool("fallingDown", _playerController.VelocityY<0);
-        
+        _animator.SetBool("grounded", _playerController.IsGrounded);
         
     }
 }
