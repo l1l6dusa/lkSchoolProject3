@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerController))]
-public class AnimationController : MonoBehaviour
+public class MainCharAnimationController : MonoBehaviour
 {
     private PlayerController _playerController;
     private Animator _animator;
-    // Start is called before the first frame update
+    
     void Start()
     {
         _playerController = GetComponent<PlayerController>();

@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class ParralaxEffect : MonoBehaviour
 {
+    [SerializeField] private ParralaxContainer[] _backgrounds;
+    
     private Vector3 _lastCameraPos;
 
-    public ParralaxContainer[] _backgrounds;
-    // Start is called before the first frame update
+    
     void Start()
     {
         _lastCameraPos = transform.position;

@@ -11,7 +11,6 @@ public class FollowPlayer : MonoBehaviour
     private Vector2 _followBounds;
 
     private Vector3 _oldPos;
-    
     private Vector3 offset;
     
     void Start()

@@ -12,19 +12,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jumpVelocity;
     private Rigidbody2D _rigidbody;
     [SerializeField] private float moveInput;
-    private bool _isGrounded;
-    public bool IsGrounded => _isGrounded;
-    
-    public float VelocityY => _rigidbody.velocity.y;
-
     [SerializeField] private GameObject _groundCheck;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask _groundLayers;
-    
-    
     [SerializeField ]private float _gravityMultiplier;
-
+  
+    private bool _isGrounded;
     private bool _facingRight;
+    public bool IsGrounded => _isGrounded;
+    public float VelocityY => _rigidbody.velocity.y;
+    
     
 
     private void OnEnable()
