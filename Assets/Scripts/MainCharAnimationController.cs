@@ -14,8 +14,7 @@ public class MainCharAnimationController : MonoBehaviour
         _playerController = GetComponent<PlayerController>();
         _animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (_playerController.IsGrounded)

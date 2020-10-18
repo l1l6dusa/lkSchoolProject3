@@ -8,15 +8,12 @@ public class ParralaxEffect : MonoBehaviour
     [SerializeField] private ParralaxContainer[] _backgrounds;
     
     private Vector3 _lastCameraPos;
-
     
     void Start()
     {
         _lastCameraPos = transform.position;
     }
 
-    // Update is called once per frame
-   
     void LateUpdate()
     {
         var deltaPos = transform.position - _lastCameraPos;

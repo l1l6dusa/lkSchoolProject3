@@ -21,7 +21,6 @@ public class FollowPlayer : MonoBehaviour
 
     private void LateUpdate()
     {
-        
         if (Helpers.Vector2InBounds(_playerTransform.position,transform.position, _followBounds))
         {
             

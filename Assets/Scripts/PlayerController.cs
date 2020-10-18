@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpVelocity;
     private Rigidbody2D _rigidbody;
@@ -22,8 +21,6 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded => _isGrounded;
     public float VelocityY => _rigidbody.velocity.y;
     
-    
-
     private void OnEnable()
     {
         
@@ -69,5 +66,13 @@ public class PlayerController : MonoBehaviour
         var scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.TryGetComponent(out Crystal crystal))
+        {
+            Destroy(crystal.gameObject);
+        }
     }
 }
