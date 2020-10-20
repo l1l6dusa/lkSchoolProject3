@@ -15,7 +15,7 @@ public class crystalSpawner : MonoBehaviour
         _crystalSpawnPoints = transform.GetComponentsInChildren<CrystalSpawnPoint>();
     }
 
-    void Start()
+    private void Start()
     {
         foreach (var point in _crystalSpawnPoints)
         {

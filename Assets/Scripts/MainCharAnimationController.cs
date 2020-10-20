@@ -9,13 +9,13 @@ public class MainCharAnimationController : MonoBehaviour
     private PlayerController _playerController;
     private Animator _animator;
     
-    void Start()
+    private void Start()
     {
         _playerController = GetComponent<PlayerController>();
         _animator = GetComponent<Animator>();
     }
     
-    void Update()
+    private void Update()
     {
         if (_playerController.IsGrounded)
         {

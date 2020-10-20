@@ -13,7 +13,7 @@ public class FollowPlayer : MonoBehaviour
     private Vector3 _oldPos;
     private Vector3 offset;
     
-    void Start()
+    private void Start()
     {
         offset = new Vector3(0, _playerTransform.position.y - transform.position.y,_playerTransform.position.z - transform.position.z); 
         _oldPos = _playerTransform.position;

@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    private void Start()
     {
         
         _facingRight = true;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.transform.position, groundCheckRadius, _groundLayers);
         moveInput = Input.GetAxis("Horizontal");
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Flip()
+    private void Flip()
     {
         _facingRight = !_facingRight;
         var scaler = transform.localScale;

@@ -20,13 +20,13 @@ public class Zombie : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    private void Start()
     {
         _pointIndex = 0;
         _direction = (_points[_pointIndex].transform.position - transform.position).normalized;
     }
 
-    public void Flip()
+    private void Flip()
     {
         var scaler = transform.localScale;
         scaler.x *= -1;

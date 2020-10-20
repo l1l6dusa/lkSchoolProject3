@@ -9,12 +9,12 @@ public class ParralaxEffect : MonoBehaviour
     
     private Vector3 _lastCameraPos;
     
-    void Start()
+    private void Start()
     {
         _lastCameraPos = transform.position;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         var deltaPos = transform.position - _lastCameraPos;
         for (int i = 0; i<_backgrounds.Length; i++)
