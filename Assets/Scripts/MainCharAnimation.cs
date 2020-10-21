@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(PlayerController))]
-public class MainCharAnimationController : MonoBehaviour
+[RequireComponent(typeof(Player))]
+public class MainCharAnimation : MonoBehaviour
 {
-    private PlayerController _playerController;
+    private Player _player;
     private Animator _animator;
     
     private void Start()
     {
-        _playerController = GetComponent<PlayerController>();
+        _player = GetComponent<Player>();
         _animator = GetComponent<Animator>();
     }
     
     private void Update()
     {
-        if (_playerController.IsGrounded)
+        if (_player.IsGrounded)
         {
             _animator.SetBool("run",Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)); 
         }
@@ -25,12 +25,12 @@ public class MainCharAnimationController : MonoBehaviour
         {
             _animator.SetBool("run", false);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && _playerController.IsGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _player.IsGrounded)
         {
             _animator.SetTrigger("jump");
         }
-        _animator.SetBool("fallingDown", _playerController.VelocityY<0);
-        _animator.SetBool("grounded", _playerController.IsGrounded);
+        _animator.SetBool("fallingDown", _player.VelocityY<0);
+        _animator.SetBool("grounded", _player.IsGrounded);
         
     }
 }
